@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 const ContactSec = styled.section`
@@ -111,6 +112,24 @@ background-color: #5C618A;
 
 
 export default function ContactMe( {contacts}) {
+    
+const [name, setName] = React.useState("");
+const [email, setEmail] = React.useState("");
+const [message, setMessage] = React.useState("");
+
+function encode(data) {
+    return Object.keys(data).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
+}
+
+function handleSubmit(e) {
+    e.preventDefault();
+    fetch("/", {
+        method: "POSTS", 
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: encode({ "form-name" : "contact", name, email, message }),
+    }).then(() => alert("Your message has been sent.")).catch((error) => alert(error));
+}
+
     return(
         <ContactSec id="ContactMe">
             <ContactLeft>
@@ -137,18 +156,18 @@ export default function ContactMe( {contacts}) {
                 <h2>Let's Work Together</h2>
                 </SecHeader>
             <FormContain>
-<ContactForm>
+<ContactForm onSubmit={handleSubmit}>
 <FormInput>
     <label>Name</label>
-    <input type="text" id="name" name="name"/>
+    <input type="text" id="name" name="name" onChange={(e) => setName(e.target.value)}/>
 </FormInput>
 <FormInput>
     <label>E-mail</label>
-    <input type="email" id="email" name="email"/>
+    <input type="email" id="email" name="email" onChange={(e) => setEmail(e.target.value)}/>
 </FormInput>
 <FormInput>
     <label>Message</label>
-    <textarea id="message" name="message" />
+    <textarea id="message" name="message" onChange={(e) => setMessage(e.target.value)}/>
 </FormInput>
 <SubmitBtn type="submit">Submit</SubmitBtn>
 </ContactForm>
