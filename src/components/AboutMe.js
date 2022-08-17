@@ -7,6 +7,9 @@ width: 100%;
 max-width: 1920px;
 padding-top: 64px;
 
+@media screen and (max-width: 414px) {
+    padding-bottom: 128px; 
+}
 `;
 
 const AboutMe002 = styled.div`
@@ -35,10 +38,15 @@ margin-right: 64px;
 const SecHead = styled.div`
 font-size: 32px;
 font-weight: bold;
+
+@media screen and (max-width: 414px) {
+    font-size: 24px;
+}
 `;
 
 const Text001 = styled.div`
 margin-top: 8px;
+
 `;
 
 const Picture = styled.div`
