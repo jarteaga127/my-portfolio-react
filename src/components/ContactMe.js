@@ -8,17 +8,29 @@ padding-right: 32px;
 padding-bottom: 120px;
 display: flex;
 
-
+@media screen and (max-width: 414px) {
+    display: block;
+}
 `;
 
 const ContactLeft = styled.div`
 width: 50%;
+
+@media screen and (max-width: 414px) {
+    width: 100%;
+    margin-bottom: 16px;
+}
 
 `;
 
 const ContactRight = styled.div`
 width: 50%;
 padding-left: 32px;
+
+@media screen and (max-width: 414px) {
+    width: 100%;
+padding: initial;
+}
 `;
 
 const SocialInner = styled.div`
