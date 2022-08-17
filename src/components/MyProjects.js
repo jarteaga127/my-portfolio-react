@@ -6,7 +6,7 @@ padding-top: 64px;
 padding-left: 32px;
 padding-right: 32px;
 width: 100%;
-padding-bottom: 120px;
+padding-bottom: 128px;
 `;
 
 const MyProjects002 = styled.div`
@@ -20,10 +20,17 @@ const SecHeader = styled.div`
 
 h2 {
     font-size: 32px;
+    @media screen and (max-width: 414px) {
+        font-size: 24px;
+    }
 }
 
 p {
     font-size: 24px;
+    @media screen and (max-width: 414px) {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
 }
 `;
 
