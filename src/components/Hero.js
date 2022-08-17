@@ -36,9 +36,24 @@ color: white;
   z-index: 10;
   text-align: center;
 
+  @media screen and (max-width: 414px) {
+    padding: 8px 16px;
+  }
+
   h1 {
     font-family: "Righteous";
     font-size: 64px;
+
+    @media screen and (max-width: 414px) {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      @media screen and (max-width: 414px) {
+        font-size: 24px;
+      }
+    }
 
 `;
 
