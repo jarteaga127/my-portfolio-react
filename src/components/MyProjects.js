@@ -123,15 +123,18 @@ export default function MyProjects({projects}) {
 <MyProjects002>
     
     <ProjectCont>
-        {projects.map(({id, image, alt, title }) => (
+        {projects.map(({id, image, alt, title, link }) => (
         <ProjectWrapper>
+            
             <ProjectThumb>
+                <a href={link}>
                 <ImgCont>
                 <ThumbImg src={image} alt={alt}/>
                 </ImgCont>
                 <ProjectName>{title}</ProjectName>
-            
+            </a>
             </ProjectThumb>
+            
         </ProjectWrapper>
 ))}
     </ProjectCont>
