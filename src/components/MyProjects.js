@@ -58,6 +58,10 @@ cursor: pointer;
 background-color: #2f3247;
 width: 375px;
 
+a {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 900px) {
     width: 100%;
     margin-bottom: 32px;
@@ -83,6 +87,9 @@ filter: grayscale(100%);
     }
 
 `;
+
+const Category = styled.div`
+padding: 8px 16px;`;
 
 const ProjectName = styled.div`
 font-weight: bold;
@@ -123,7 +130,7 @@ export default function MyProjects({projects}) {
 <MyProjects002>
     
     <ProjectCont>
-        {projects.map(({id, image, alt, title, link }) => (
+        {projects.map(({id, image, alt, category, title, link }) => (
         <ProjectWrapper>
             
             <ProjectThumb>
@@ -131,6 +138,7 @@ export default function MyProjects({projects}) {
                 <ImgCont>
                 <ThumbImg src={image} alt={alt}/>
                 </ImgCont>
+                <Category>{category} </Category>
                 <ProjectName>{title}</ProjectName>
             </a>
             </ProjectThumb>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 const ContactSec = styled.section`
@@ -92,7 +92,7 @@ const FormInput = styled.div`
 display: block;
 
 input {
-    opacity: 0.5;
+   
     width: 100%;
     padding: 8px 16px;
     border: 1px solid;
@@ -104,7 +104,7 @@ input {
 textarea {
     width: 100%;
     height: 320px;
-   opacity: 0.5;
+  
 }
 `;
 
@@ -123,11 +123,11 @@ background-color: #5C618A;
 
 
 
-export default function ContactMe( {contacts}) {
+export default function ContactMe() {
     
-const [name, setName] = React.useState("");
-const [email, setEmail] = React.useState("");
-const [message, setMessage] = React.useState("");
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [message, setMessage] = useState("");
 
 function encode(data) {
     return Object.keys(data).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
@@ -136,7 +136,7 @@ function encode(data) {
 function handleSubmit(e) {
     e.preventDefault();
     fetch("/", {
-        method: "POSTS", 
+        method: "POST", 
         headers: {"Content-Type": "application/x-www-form-urlencoded"},
         body: encode({ "form-name" : "contact", name, email, message }),
     }).then(() => alert("Your message has been sent.")).catch((error) => alert(error));
@@ -151,14 +151,38 @@ function handleSubmit(e) {
 <SocialInner>   
         <SocialMedia>
             <SocialMedia001>
-                {contacts.map(({id, icon, label, link}) => (
-                <SocialLink key={id}>
-                    <a href={link}>
-<SocialIcon>{icon}</SocialIcon>
-<SocialLabel>{label}</SocialLabel>
+               
+                <SocialLink>
+                    <a href="https://www.instagram.com/jarteaga127/">
+<SocialIcon><i class="fab fa-instagram"></i></SocialIcon>
+<SocialLabel>Instagram</SocialLabel>
                     </a>
                 </SocialLink>
-                ))}
+                <SocialLink>
+                    <a href="https://www.facebook.com/joseph.arteaga.98">
+<SocialIcon><i class="fab fa-facebook-square"></i></SocialIcon>
+<SocialLabel>Facebook</SocialLabel>
+                    </a>
+                </SocialLink>
+                <SocialLink>
+                    <a href="https://github.com/jarteaga127">
+<SocialIcon><i class="fab fa-github"></i></SocialIcon>
+<SocialLabel>GitHub</SocialLabel>
+                    </a>
+                </SocialLink>
+                <SocialLink>
+                    <a href="https://codepen.io/jarteaga127">
+<SocialIcon><i class="fab fa-codepen"></i></SocialIcon>
+<SocialLabel>Codepen</SocialLabel>
+                    </a>
+                </SocialLink>
+                <SocialLink>
+                    <a href="https://www.linkedin.com/in/joseph-arteaga-019a25191/">
+<SocialIcon><i class="fab fa-linkedin-in"></i></SocialIcon>
+<SocialLabel>LinkedIn</SocialLabel>
+                    </a>
+                </SocialLink>
+                
             </SocialMedia001>
         </SocialMedia>
 </SocialInner>
