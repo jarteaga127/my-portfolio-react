@@ -1,8 +1,16 @@
 import ComingSoon from "../images/DSC00808.JPG";
 import IncomeTracker from "../images/income-tracker.jpg";
 import ToDoList from "../images/todolist.jpg";
+import Pilgrime from "..images/pilgrime-01.png";
 
 export const ProjectData = [
+    {
+        image: Pilgrime,
+        alt: "A Website that I made",
+        category: "Web Development",
+        title: "Pilgrime",
+        link: "https://resonant-profiterole-cf0933.netlify.app/"
+    },
     {
         image: ToDoList,
         alt: "To do list",
