@@ -192,7 +192,7 @@ function handleSubmit(e) {
                 <h2>Let's Work Together</h2>
                 </SecHeader>
             <FormContain>
-<ContactForm netlify name="contact" onSubmit={handleSubmit}>
+<ContactForm onSubmit={handleSubmit}>
 <FormInput>
     <label>Name</label>
     <input type="text" id="name" name="name" onChange={(e) => setName(e.target.value)}/>

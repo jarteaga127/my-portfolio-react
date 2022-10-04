@@ -6,7 +6,6 @@ import HeroSection from './components/Hero';
 import MyProjects from './components/MyProjects';
 import NavBar from './components/NavBar';
 import { ProjectData } from './Data/ProjectData';
-import { ContactData } from './Data/ContactData';
 import ContactMe from './components/ContactMe';
 import SideMenu from './components/SideMenu';
 import Footer from "./components/Footer";
@@ -26,7 +25,7 @@ function App() {
     <HeroSection/>
     <AboutMe/>
     <MyProjects projects={ProjectData}/>
-    <ContactMe contacts={ContactData}/>
+    <ContactMe/>
     <Footer/>
     </div>
   );
